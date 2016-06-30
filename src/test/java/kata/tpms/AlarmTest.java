@@ -3,6 +3,7 @@ package kata.tpms;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class AlarmTest {
     @Test
@@ -10,7 +11,13 @@ public class AlarmTest {
         assertEquals(5, 2 + 3);
     }
 
-    // TODO-user-intent-test: a normal pressure value should not raise the alarm
+    // TODO-user-intent-test-working-on: a normal pressure value should not raise the alarm
+    @Test
+    public void a_normal_pressure_value_should_not_raise_the_alarm() {
+        // Assert
+        assertFalse(alarm.isAlarmOn());
+    }
+
 
     // TODO-user-intent-test: a pressure value out the range should raise the alarm
 
