@@ -16,18 +16,16 @@ public class Alarm {
         this.transducer = transducer;
     }
 
-    public void check()
-    {
+    public void check() {
+        alarmOn = false;
         double psiPressureValue = transducer.popNextPressurePsiValue();
 
-        if (psiPressureValue < LOW_PRESSURE_THRESHOLD || HIGH_PRESSURE_THRESHOLD < psiPressureValue)
-        {
+        if (psiPressureValue < LOW_PRESSURE_THRESHOLD || HIGH_PRESSURE_THRESHOLD < psiPressureValue) {
             alarmOn = true;
         }
     }
 
-    public boolean isAlarmOn()
-    {
+    public boolean isAlarmOn() {
         return alarmOn;
     }
 }
