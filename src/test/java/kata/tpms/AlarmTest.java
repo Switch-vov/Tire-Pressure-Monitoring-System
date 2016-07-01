@@ -16,7 +16,7 @@ public class AlarmTest {
     public void a_normal_pressure_value_should_not_raise_the_alarm() {
         // Arrange
         StubSensor stubSensor = new StubSensor();
-        subSensor.arrangeNextPressurePsiValue(Alarm.LOW_PRESSURE_THRESHOLD);
+        stubSensor.arrangeNextPressurePsiValue(Alarm.LOW_PRESSURE_THRESHOLD);
         Alarm alarm = new Alarm(stubSensor);
 
         // Act
