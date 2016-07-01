@@ -27,7 +27,6 @@ public class AlarmTest {
     }
 
 
-    // TODO-user-intent-test-working-on: a pressure value outside the range should raise the alarm
     @Test
     public void a_pressure_value_outside_the_range_should_raise_the_alarm() {
         // Arrange
@@ -43,7 +42,13 @@ public class AlarmTest {
     }
 
 
-    // TODO-user-intent-test: a normal pressure value after a value outside the range should not stop the alarm
+    // TODO-user-intent-test-working-on: a normal pressure value after a value outside the range should not stop the alarm
+    @Test
+    public void a_normal_pressure_value_after_a_value_outside_the_range_should_not_stop_the_alarm() {
+        // Assert
+        assertTrue(alarm.isAlarmOn());
+    }
+
 
     // TODO-new-feature: a normal pressure value after a value outside the range should stop the alarm
 }
