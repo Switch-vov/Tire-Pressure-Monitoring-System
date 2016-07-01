@@ -15,7 +15,9 @@ public class AlarmTest {
     @Test
     public void a_normal_pressure_value_should_not_raise_the_alarm() {
         // Arrange
-        Alarm alarm = new Alarm();
+        StubSensor stubSensor = new StubSensor();
+        subSensor.arrangeNextPressurePsiValue(Alarm.LOW_PRESSURE_THRESHOLD);
+        Alarm alarm = new Alarm(stubSensor);
 
         // Act
         alarm.check();
@@ -26,6 +28,7 @@ public class AlarmTest {
 
 
     // TODO-user-intent-test: a pressure value out the range should raise the alarm
+
 
     // TODO-user-intent-test: a normal pressure value after a value outside the range should not stop the alarm
 
