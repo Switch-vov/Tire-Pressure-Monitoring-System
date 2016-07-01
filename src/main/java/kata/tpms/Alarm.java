@@ -4,22 +4,22 @@ public class Alarm {
     public static final double LOW_PRESSURE_THRESHOLD = 17;
     private final double HighPressureThreshold = 21;
 
-    // TODO: Depending on a concrete Sensor violates the Dependency Inversion Principle and Open-Closed Principle
-    private Sensor sensor = new Sensor();
+    // TODO-working-on: Depending on a concrete Sensor violates the Dependency Inversion Principle and Open-Closed Principle
+    private Transducer transducer = null;
 
     private boolean alarmOn = false;
 
     public Alarm() {
-        this.sensor = new Sensor();
+        this.transducer = new Sensor();
     }
 
     public Alarm(Transducer transducer) {
-
+        this.transducer = transducer;
     }
 
     public void check()
     {
-        double psiPressureValue = sensor.popNextPressurePsiValue();
+        double psiPressureValue = transducer.popNextPressurePsiValue();
 
         if (psiPressureValue < LOW_PRESSURE_THRESHOLD || HighPressureThreshold < psiPressureValue)
         {
