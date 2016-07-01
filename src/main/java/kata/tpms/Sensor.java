@@ -2,7 +2,7 @@ package kata.tpms;
 
 import java.util.Random;
 
-public class Sensor {
+public class Sensor implements Transducer {
     public static final double OFFSET = 16;
 
     public double popNextPressurePsiValue()
